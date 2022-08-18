@@ -26,7 +26,7 @@ with open('etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['evening-refuge-37042.herokuapp.com','127.0.0.1']
 
 
 # Application definition
