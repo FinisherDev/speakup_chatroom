@@ -66,7 +66,7 @@ def chat_view(request):
     if not request.user.is_authenticated:
         return redirect('index')
     if request.method == "GET":
-        return render(request, 'chatroom/chat_page.html',
+        return render(request, 'chatroom/dashboard.html',
                       {'users': User.objects.exclude(username=request.user.username)})
 
 
@@ -77,6 +77,6 @@ def message_view(request, sender, receiver):
         return render(request, "chatroom/messages.html", {'users': User.objects.exclude(username=request.user.username), 'receiver': User.objects.get(id=receiver), 'messages': Messages.objects.filter(sender_id=sender, receiver_id=receiver) | Messages.objects.filter(sender_id=receiver, receiver_id=sender)})
     elif request.method == "POST":
         message = request.POST['message']
-        msg_saved = Messages(sender_id=sender, receiver_id=receiver, message=message) 
+        msg_saved = Messages(sender_id=sender, receiver_id=receiver, message=message)
         msg_saved.save()
         return render(request, "chatroom/messages.html", {'users': User.objects.exclude(username=request.user.username), 'receiver': User.objects.get(id=receiver), 'messages': Messages.objects.filter(sender_id=sender, receiver_id=receiver) | Messages.objects.filter(sender_id=receiver, receiver_id=sender)})

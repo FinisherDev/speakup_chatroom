@@ -1,0 +1,30 @@
+{% extends 'home/home_page.html' %}
+{% load static %}
+{% block form %}
+<nav class="username_loc">
+    <div class="">
+      <ul id="nav-mobile">
+          <li><a href="" style="color: purple">{{ request.user.username }}</a></li>
+          <li><a href="{% url 'home' %}" style="color: purple">Logout</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="section" style="height: 60px" id="users">
+<div class="row">
+    <div class="col s3">
+    <div class="card">
+        <div class="collection_column">
+            {% for user in users %}
+            <a href="{% url 'chat' request.user.id user.id %}" id="user{{ user.id }}" class="collection-item_column">
+                <img src="{% static 'home/css/user.jpg' %}" class="col_s4">
+                <div class="">
+                <span class="title_user" style="font-weight: bolder">{{ user.username }}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+{% endblock %}
