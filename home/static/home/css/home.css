@@ -1,8 +1,10 @@
 *{
   box-sizing: border-box;
+  width: auto;
 }
 body{
  margin: 0px;
+ height: 100%;
 }
 .header{
   color: white;
@@ -26,9 +28,10 @@ p{
 #login-form{
   display: block;
   margin-left: 40.00%;
+  margin-right: 40.00%;
   margin-top: 10.00%;
   background-color: purple;
-  width: 25.00%;
+  width: 300px;
   padding: 10px 40px 40px 40px;
   border-radius: 5px;
   height: 400px;
@@ -66,6 +69,7 @@ p{
   border-color: #2F4F4F;
   font-size: 16.5px;
   margin-bottom: 10px;
+  width: inherit;
 }
 .password{
   color: white;
@@ -182,27 +186,30 @@ a{
 #chat-box{
   display: inline;
   background-color: purple;
-  position: fixed;
+  position: absolute;
+  bottom: 0px;
   width: 100%;
-  height: 18vh;
 }
 .input-field{
-  float: left;
-  margin-bottom: 0px;
-  margin-left: 10px;
+  clear: right;
+  bottom: 0px;
+  height: 30px;
   margin-top: 11px;
+  margin-left: 10px;
 }
 #id_message{
   border-radius: 10px;
+  width: 70.00%;
 }
 .cols1{
   margin-right: 10px;
   margin-left: 90%;
+  height: 10%;
+  margin-bottom: 10px;
 }
 #send_btn{
   height: 70px;
   width: 70px;
-  margin-top: 40px;
   background-image: url("send.png");
   background-color: transparent;
   border-radius: 60px;
@@ -251,6 +258,9 @@ a{
 }
 #board{
   overflow-y: scroll;
+  height: 73vh;
+  bottom: 0px;
+  padding-bottom: 3px;
 }
 .collection{
   background: white;
@@ -276,7 +286,7 @@ a{
   margin-left: 0px;
   margin-bottom: 10px;
   padding-left: 3px;
-  padding-right: 146vh;
+  padding-right: 42%;
   border-bottom-style: groove;
   color: purple;
   font-family: sans-serif;
