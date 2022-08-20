@@ -27,9 +27,10 @@ h1{
 p{
   float: right;
   margin-bottom: 0px;
+  flex-grow: 1;
 }
 #login-form{
-  display: flex;
+  display: block;
   margin-left: 40.00%;
   margin-right: 40.00%;
   margin-top: 10.00%;
@@ -189,7 +190,7 @@ a{
 #chat-box{
   display: inline-block;
   background-color: purple;
-  position: fixed;
+  position: sticky;
   bottom: 0px;
   width: 100%;
 }
