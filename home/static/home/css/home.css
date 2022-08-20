@@ -13,20 +13,23 @@ body{
   margin-left: : 0px;
   padding-left: 10px;
   width: 100%;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 h1{
   margin: 0px;
   text-align: left;
   clear: right;
   display: inline-block;
+  flex-grow: 1;
 }
 p{
   float: right;
   margin-bottom: 0px;
 }
 #login-form{
-  display: block;
+  display: flex;
   margin-left: 40.00%;
   margin-right: 40.00%;
   margin-top: 10.00%;
@@ -41,7 +44,7 @@ p{
   margin-left: 40.00%;
   margin-top: 10.00%;
   background-color: purple;
-  width: 25.00%;
+  width: 300px;
   padding: 10px 40px 40px 40px;
   border-radius: 5px;
   height: 400px;
@@ -184,14 +187,13 @@ a{
   text-align: center;
 }
 #chat-box{
-  display: inline;
+  display: inline-block;
   background-color: purple;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
 }
 .input-field{
-  clear: right;
   bottom: 0px;
   height: 30px;
   margin-top: 11px;
@@ -203,9 +205,11 @@ a{
 }
 .cols1{
   margin-right: 10px;
-  margin-left: 90%;
+  margin-left: 80%;
+  overflow: hidden;
   height: 10%;
   margin-bottom: 10px;
+  flex-grow: 0.5;
 }
 #send_btn{
   height: 70px;
@@ -258,30 +262,12 @@ a{
 }
 #board{
   overflow-y: scroll;
-  height: 73vh;
-  bottom: 0px;
+  height: 69vh;
   padding-bottom: 3px;
 }
-.collection{
-  background: white;
-  display: block;
-  margin-top: 0px;
-  border-bottom-style: groove;
-  border-bottom-width: thin;
-  overflow-x: scroll;
-}
-.collection-item_row{
-  display: inline-block;
-  margin-left: 80px;
-  color: purple;
-  border-left-style: groove;
-  border-width: thin;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  padding-left: 3px;
-}
 #nav-mobile_chat{
-  display: inline;
+  margin-top: 0px;
+  display: inline-flex;
   list-style-type: none;
   margin-left: 0px;
   margin-bottom: 10px;
@@ -295,6 +281,7 @@ a{
 li{
   display: inline;
   margin: 10px;
+  flex-shrink: 0.5;
 }
 .collection_column{
   background: white;
