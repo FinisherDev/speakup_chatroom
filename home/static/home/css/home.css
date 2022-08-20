@@ -190,7 +190,7 @@ a{
 #chat-box{
   display: inline-block;
   background-color: purple;
-  position: sticky;
+  position: absolute;
   bottom: 0px;
   width: 100%;
 }
