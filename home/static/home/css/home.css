@@ -5,6 +5,7 @@
 body{
  margin: 0px;
  height: 100%;
+ overflow-x: hidden;
 }
 .header{
   color: white;
@@ -22,17 +23,24 @@ h1{
   text-align: left;
   clear: right;
   display: inline-block;
-  flex-grow: 1;
+  flex-grow: 1000;
 }
 p{
   float: right;
   margin-bottom: 0px;
   flex-grow: 1;
 }
+.container{
+  display: flex;
+}
+#const_1{
+  flex: 1;
+}
+#const_2{
+  flex: 1;
+}
 #login-form{
   display: block;
-  margin-left: 40.00%;
-  margin-right: 40.00%;
   margin-top: 10.00%;
   background-color: purple;
   width: 300px;
@@ -42,7 +50,6 @@ p{
 }
 #register-form{
   display: block;
-  margin-left: 40.00%;
   margin-top: 10.00%;
   background-color: purple;
   width: 300px;
@@ -203,6 +210,7 @@ a{
 #id_message{
   border-radius: 10px;
   width: 70.00%;
+  flex: 3;
 }
 .cols1{
   margin-right: 10px;
@@ -218,6 +226,7 @@ a{
   background-image: url("send.png");
   background-color: transparent;
   border-radius: 60px;
+  flex: 1;
 }
 .card-panel_right{
   border-style: groove;
@@ -229,6 +238,8 @@ a{
   box-shadow: 0px 2px 2px #667;
   height: 37%;
   background-color: purple;
+  display: flex;
+  flex-direction: column;
   word-wrap: break-word;
 }
 #head{
@@ -273,7 +284,7 @@ a{
   margin-left: 0px;
   margin-bottom: 10px;
   padding-left: 3px;
-  padding-right: 42%;
+  width: 100%;
   border-bottom-style: groove;
   color: purple;
   font-family: sans-serif;

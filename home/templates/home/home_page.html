@@ -14,41 +14,49 @@
         <h1>Speakup</h1>
         <p>... a place to be heard</p>
       </div>
-      {% block form %}
-      <form id="login-form" class="form-group" method="post">
-          {% csrf_token %}
-            <div class="row" id="form_label">
-              Login
-            </div>
-            {% if messages %}
-              {% for msg in messages %}
-                <div class="alert alert-{{msg.level_tag}}" role="alert" id="msg">
-                  {{msg.message}}
+        {% block form %}
+        <div class="container">
+          <section id="const_1">
+
+          </section>
+          <form id="login-form" class="form-group" method="post">
+              {% csrf_token %}
+                <div class="row" id="form_label">
+                  Login
                 </div>
-              {% endfor %}
-            {% endif %}
-          <div class="row">
-              <div class="username">
-                  <label for="id_username">Username</label>
-                  <input name="username" id="id_username" type="text">
+                {% if messages %}
+                  {% for msg in messages %}
+                    <div class="alert alert-{{msg.level_tag}}" role="alert" id="msg">
+                      {{msg.message}}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              <div class="row">
+                  <div class="username">
+                      <label for="id_username">Username</label>
+                      <input name="username" id="id_username" type="text">
+                  </div>
               </div>
-          </div>
-          <div class="row">
-              <div class="password">
-                  <label for="id_password">Password</label>
-                  <input name="password" id="id_password" type="password">
+              <div class="row">
+                  <div class="password">
+                      <label for="id_password">Password</label>
+                      <input name="password" id="id_password" type="password">
+                  </div>
               </div>
-          </div>
-          <div class="row" id="right">
-            <div>
-                <button id="login">Login</button>
-            </div>
-            <div class="reg_point">
-                <a href="{% url 'register' %}">Create an account</a>
-            </div>
-          </div>
-      </form>
-      {% endblock %}
+              <div class="row" id="right">
+                <div>
+                    <button id="login">Login</button>
+                </div>
+                <div class="reg_point">
+                    <a href="{% url 'register' %}">Create an account</a>
+                </div>
+              </div>
+          </form>
+          <section id="const_2">
+
+          </section>
+        </div>
+        {% endblock %}
     </body>
 
   </html>
