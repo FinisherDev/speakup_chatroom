@@ -1,0 +1,59 @@
+{% extends 'home/home_page.html' %}
+{% load static %}
+{% block form %}
+<nav class="username_loc">
+    <div class="">
+      <ul id="nav-mobile_chat">
+          <li><a href="" style="color: purple">{{ request.user.username }}</a></li>
+          <li><a href="{% url 'home' %}" style="color: purple">Logout</a></li>
+          <li><a href="{% url 'chatroom' %}" style="color: purple">Back to Dashboard</a></li>
+      </ul>
+    </div>
+</nav>
+    <div class="section" style="height: 60px" id="users">
+    <div class="row">
+        <div class="">
+            <div class="card">
+            <div id="board" class="section grey lighten-3">
+                {% block messages %}
+
+                {% endblock %}
+            </div>
+            <footer>
+            <form id="chat-box" class="form-group {% block hide %}hide{% endblock %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="">
+                        <div class="input-field">
+                            <textarea id="id_message" name="message" type="text" placeholder="Type your message..." rows="6" cols="150"></textarea>
+                        </div>
+                    </div>
+                    <div class="cols1">
+                        <button type="submit" name="button" id="send_btn"></button>
+                    </div>
+                </div>
+            </form>
+            </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'chatroom/js/chat.js' %}"></script>
+    <script>
+        // For receiving
+        sender_id = "{{ receiver.id }}";
+        receiver_id = "{{ request.user.id }}";
+
+        //For sending
+        $(function () {
+          scrolltoend();
+          $('#chat-box').on('submit', function (event) {
+
+            var message = ('#id_message');
+            send('{{ request.user.username }}', '{{ receiver.username }}', message.val());
+            message.val('');
+        })
+      })
+    </script>
+{% endblock %}

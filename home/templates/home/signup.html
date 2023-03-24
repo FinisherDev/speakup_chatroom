@@ -1,0 +1,62 @@
+{% extends 'home/home_page.html' %}
+{% block form %}
+<div class="container">
+      <section id="const_1">
+
+      </section>
+      <form id="register-form" class="reg" method="POST">
+        {% csrf_token %}
+        <div id="form_label">
+          Register
+        </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register">First Name</label>
+                    <input name="first_name" id="id_first_name" type="text" placeholder="Enter your first name here">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register" data-error="Username already taken">Last Name</label>
+                    <input name="last_name" id="id_last_name" type="text" placeholder="Enter your last name here">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register" data-error="Username already taken">Username</label>
+                    <input name="username" id="id_username" type="text" placeholder="Enter your username here">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register" id="id_email_label">Email</label>
+                    <input name="email" id="id_email" type="email" placeholder="majub@dragonballgt.com" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register" data-error="Username already taken">Password</label>
+                    <input name="password" id="id_password2" type="password" placeholder="" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field_col_s12">
+                    <label for="id_register" id="id_confirm">Confirm Password</label>
+                    <input name="confirm_password" id="id_confirm_password" type="password" placeholder="" >
+                </div>
+            </div>
+            <div class="row" id="right">
+                <div id="register">
+                    <input type="submit" name="" value="Register">
+                </div>
+                <div class="reg_point">
+                    <a href="{% url 'home' %}">Back to Home</a>
+                </div>
+            </div>
+
+      </form>
+      <section id="const_2">
+
+      </section>
+</div>
+{% endblock %}
